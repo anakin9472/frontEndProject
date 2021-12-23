@@ -1,0 +1,317 @@
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333;
+
+  --primary-color: #2d91ee;
+
+  --border-color: #dbdbdb;
+  --star-gold-color: #ffce3e;
+
+  --navbar-height: 34px;
+  --header-height: 120px;
+  --header-with-search-height: calc(
+    (var(--header-height) - var(--navbar-height))
+  );
+}
+* {
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.25%; /* 1 rem = 10px */
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Responsive  */
+.grid {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.grid__full-width {
+  width: 100%;
+}
+
+.grid__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.grid__column-2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  /* 2/12 * 100%  */
+  width: 16.6667%;
+}
+
+.grid__column-2-4 {
+  padding-left: 5px;
+  padding-right: 5px;
+  /* 12/5 = 2.4; 100%/5= 20% */
+  width: 20%;
+  transition: 0.5s all;
+}
+
+.grid__column-10 {
+  padding-left: 5px;
+  padding-right: 5px;
+  /* 10/12*100% */
+  width: 83.3333%;
+}
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes growth {
+  from {
+    transform: scale(var(--growth-from));
+  }
+  to {
+    transform: scale(var(--growth-to));
+  }
+}
+
+.modal {
+  /* full screen  */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0%;
+  bottom: 0;
+
+  /* for centering the body ( margin)*/
+  /* display: flex; */
+  animation: fadeIn linear 0.1s;
+
+  display: none;
+}
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+  /* width: 300px;
+    height: 300px; */
+  /* background-color: var(--white-color); */
+  margin: auto;
+  /* border-radius: 5px; */
+
+  /* making the body has the higher position layer than the overlay */
+  position: relative;
+
+  /* the one have the highest z-index's value is the one on the top layer */
+  /* default z-index'value for every element is 0 so we can just set z-index to 1 for just this body */
+  z-index: 2;
+  /* display: none; */
+
+  --growth-from: 0.7;
+  --growth-to: 1;
+  animation: growth linear 0.1s;
+}
+
+/* Button style */
+
+.btn {
+  min-width: 124px;
+  height: 34px;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0 8px;
+  /* background-color: transparent; */
+  /* color: var(--text-color); */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn.btn--normal:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn.btn--primary {
+  /* chọn element có cả 2 class trên */
+
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+
+.btn.btn--disable {
+  cursor: default;
+  background-color: rgba(214, 208, 208, 0.972);
+  color: rgba(155, 149, 149, 0.952);
+}
+
+.btn--size-s {
+  height: 32px;
+  font-size: 12px;
+}
+
+/* Selection */
+
+.select-input {
+  min-width: 200px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.select-input__label {
+  font-size: 1.4rem;
+}
+
+.select-input__label__icon {
+  font-size: 1.4rem;
+  color: rgb(131, 131, 131);
+  position: relative;
+  top: -2px;
+}
+
+.select-input__list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  padding: 8px 16px;
+  list-style: none;
+  display: none;
+  z-index: 1;
+}
+
+.select-input:hover .select-input__list {
+  display: block;
+}
+
+.select-input__link {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 4px 0;
+  display: block;
+}
+
+.select-input__link:hover {
+  color: var(--primary-color);
+}
+.select-input::before {
+  display: block;
+  content: "";
+  width: 100%;
+  /* background-color: black; */
+  position: absolute;
+  top: 25px;
+  right: 0;
+  height: 10px;
+  /* cursor: pointer; */
+}
+
+.select-input-field {
+  width: 100%;
+  margin: 4px;
+  padding: 8px 0;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+/* Pagination  */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.pagination-item--active .pagination-item__link {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+.pagination-item {
+  margin: 0 8px;
+}
+.pagination-item-list-number {
+  display: flex;
+}
+.pagination-item__link {
+  --height: 30px;
+  display: block;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #939393;
+  min-width: 40px;
+  height: var(--height);
+  line-height: var(--height);
+  text-align: center;
+  border-radius: 2px;
+}
+
+.pagination-item__link--previous,
+.pagination-item__link--next {
+  color: var(--primary-color);
+}
+
+.pagination-item__link-btn--disable {
+  color: var(--black-color);
+}
+.pagination-item__link:hover {
+  cursor: pointer;
+}
+
+/* Active and de-Active */
+.activeFlex {
+  display: flex;
+}
+
+.activeBlock {
+  display: block !important;
+}
+
+.de-active {
+  display: none !important;
+}
+
+/* validation  */
+.invalid-input {
+  border: 1px solid red !important;
+}
+.valid-input {
+  border: 2px solid rgb(70, 79, 206) !important;
+}
+.active-Visible {
+  visibility: visible !important;
+}
+.invalid-Message {
+  color: red;
+  position: absolute;
+  text-align: left;
+  margin-left: 3px;
+  margin-top: 1px;
+  margin-bottom: 10px;
+}

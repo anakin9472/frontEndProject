@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/managerTable.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Student Form</title>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+
+    <script src="./js/userLoginLoadEmail.js" async></script>
+    <script src="./js/authFormActivation.js" async></script>
+    <script src="./js/studentPage.js" async></script>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid">
+            <!-- Header navbar  -->
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+
+                        <li class="header__navbar-item">
+                            <div class = "header_navbar_title" style="margin-top: 20px;">
+                                <h1>QUẢN LÝ SINH VIÊN</h1>
+                            </div>
+                        </li>
+                    </ul>
+    
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item-has-notify">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fas fa-bell"></i>Thông Báo
+                            </a>
+
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon far fa-question-circle"></i>Trợ Giúp
+                            </a>
+                         
+                        </li>
+                        <!-- Đăng ký a tag -->
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link header__navbar-item-link-register header__navbar-item-link--strong header__navbar-item--separate">
+                                Đăng Ký
+                            </a>
+                        </li>
+                        <!-- Đăng nhập a tag  -->
+                        <li class="header__navbar-item ">
+                            <a href="" class="header__navbar-item-link header__navbar-item-link-login header__navbar-item-link--strong ">
+                                Đăng Nhập
+                            </a>
+                        </li>
+                        <li class="header__navbar-item header__navbar-user de-active">
+
+                            <span class="header__navbar-item-user-name">admin</span>
+
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                    <a href="#" class="header__navbar-user-item-link--logout">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li> 
+                    </ul>
+                </nav>
+            <!-- Header with search -->
+                <div class="header-with-search">
+                    <div class="header__logo">
+                        <a href="/" class="header__logo-link">
+                            <svg viewBox="0 0 192 65" class="header__logo-img">
+
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-video3" viewBox="0 0 16 16">
+                                    <path d="M14 9.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-6 5.7c0 .8.8.8.8.8h6.4s.8 0 .8-.8-.8-3.2-4-3.2-4 2.4-4 3.2Z"/>
+                                    <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h5.243c.122-.326.295-.668.526-1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7.81c.353.23.656.496.91.783.059-.187.09-.386.09-.593V4a2 2 0 0 0-2-2H2Z"/>
+                                  </svg>
+
+
+
+                            </svg>
+                        </a>
+                    </div>
+                   
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input"  id ="header__search-input" placeholder="Nhập để tìm kiếm sinh viên">
+
+                            <!-- Search History  -->
+                            <div class="header__search-history">
+                                <h3 class="header__search-history-heading">
+                                    Lịch sử tìm kiếm
+                                </h3>
+                                <ul class="header__search-history-list">
+                                    <li class="header__search-history-item">
+                                        <a href="">Asus tuf</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="">Acer nitro</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="header__search-btn">
+                            <!-- <i class="header__search-btn-icon fas fa-search"></i> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                  </svg>
+                        </button>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </header>    
+    <div class="app__container" > 
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__column-2">
+                    <!-- Danh mục - column  -->
+                    <nav class="category">
+                        <h3 class="category__heading ">
+                            <i class="category__heading-icon fas fa-list"></i>
+                            Danh mục
+                        </h3>
+                        
+                        <ul class="category-list">
+                            <li class="category-item ">
+                                <a href="#" class="category-item__link userProfileLink">
+                                     Thông tin cá nhân
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                 <a href="#" class="category-item__link yourCourseLink">
+                                     Khóa học của bạn
+                                 </a>
+                            </li>
+                            <li class="category-item">
+                                 <a href="#" class="category-item__link allCourseLink">
+                                     Toàn bộ khóa học
+                                 </a>
+                            </li>
+
+                            <li class="category-item">
+                                <a href="#" class="category-item__link translateToolLink">
+                                    Bộ công cụ chuyển đổi ngôn ngữ
+                                </a>
+                           </li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="grid__column-10 viewProfileDetails">
+                    <div class='container'>
+                        <div class="grid__column-10 grid__column-10-flex">
+
+
+
+                            
+                            <div class="grid__column-6-of-10">
+
+
+                                    <div class="detail-info__head">
+                                        <h1 class="detail-info__head-header">
+                                            Hồ Sơ cá nhân
+                                        </h1>
+                                        <span class="detail-info__head-subtitle">
+                                            Quản lý thông tin cá nhân
+                                        </span>
+                                    </div>
+
+
+                                            <div class="detail-info">
+                                                <div class="detail-info__body">
+                                                    <div class="detail-info__body-input-field">
+                                                                <div class="detail-info__body-input-field-fname">
+                                                                    <label class="detail-info__body-input-field-fname-label">
+                                                                        Tên họ và tên đệm
+                                                                    </label>
+                                                                    <input class="detail-info__body-input-fname-value" id="user-fname">
+                                                                    </input>
+                                                                </div>
+
+                                                                <div class="detail-info__body-input-field-lname">
+                                                                    <label class="detail-info__body-input-field-lname-label">
+                                                                        Tên chính
+                                                                    </label>
+                                                                    <input class="detail-info__body-input-lname-value" id="user-lname">
+                                                                    </input>
+                                                                </div>
+                                                    
+                                                                    <div class="detail-info__body-input-field__phone">
+                                                                        <label class="detail-info__body-input-field__phone-label">
+                                                                            Số điện thoại
+                                                                        </label>
+                                                                        <!-- <span class="detail-info__body-input-field__phone-value">
+                                                                            ******10
+                                                                        </span> -->
+                                                                        <input class="detail-info__body-input-field__phone-value" id ="user-phone">
+                                                                    </input>
+                                                                        <!-- <a href="" class="detail-info__body-input-field__phone-link--change">
+                                                                            Thay đổi
+                                                                        </a> -->
+                                                                    </div>
+            
+                                                                    <div class="detail-info__body-input-field__address">
+                                                                        <label class="detail-info__body-input-field__address-label">
+                                                                            Địa chỉ
+                                                                        </label>
+                                                                        <!-- <span class="detail-info__body-input-field__phone-value">
+                                                                            ******10
+                                                                        </span> -->
+                                                                        <input class="detail-info__body-input-field__address-value" id = 'user-address'>
+                                                                    </input>
+                                                                        <!-- <a href="" class="detail-info__body-input-field__phone-link--change">
+                                                                            Thay đổi
+                                                                        </a> -->
+                                                                    </div>
+            
+            
+                                                                    <div class="detail-info__body-input-field__sex">
+                                                                        <span>Giới tính</span>
+                                                                        <div class="detail-info__body-input-field__sex--option">
+                                                                            <div class="detail-info__body-input-field__sex-male">
+                                                                                <input type="radio" name="sex" class="detail-info__body-input-field__sex-male-btn" id = "male-btn">
+                                                                                <label class="detail-info__body-input-field__sex-male-label" name="male-btn">Nam</label>
+                                                                            </div>
+                                                                            <div class="detail-info__body-input-field__sex-female">
+                                                                                <input type="radio" name="sex" class="detail-info__body-input-field__sex-female-btn" id = "female-btn">
+                                                                                <label class="detail-info__body-input-field__sex-female-label" name="female-btn">Nữ</label>
+                                                                            </div>
+                        
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="detail-info__body-input-field__bdate">
+                                                                        <label class="detail-info__body-input-field__bdate-label">
+                                                                            Ngày sinh
+                                                                        </label>
+                                                                        <!-- <span class="detail-info__body-input-field__phone-value">
+                                                                            ******10
+                                                                        </span> -->
+                                                                        <input class="detail-info__body-input-field__bdate-value" id = 'user-birthdate'>
+                                                                    </input>
+                                                                    <br>
+                                                                    <br>
+                                                                        <button class="detail-info__body-input-field-btnSave" id="btnUpdateUser">Lưu</button>
+                                                                        <!-- <button class="detail-info__body-input-field-btnSave" id="viewProduct">Xem sản phẩm</button>  -->
+                                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                            </div>
+     
+                                             
+                         </div>
+
+                 <div class="grid__column-10 TableYourCourse">
+                    <div class="container">
+                        <div style = "font-size:large; color: black; text-align: center;">Khóa học của bạn</div>
+                        <table class="responsive-table">
+                          <!-- <caption>Danh sách sản phẩm</caption> -->
+                          <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Tên học phần </th>
+                                <th scope="col">Số tiết</th>
+                                <th scope="col">Thông tin mô tả chi tiết</th>
+                                <th scope="col">Học kì</th>
+                                <th scope="col">SL sinh viên</th>
+                                <th scope="col">ID giảng viên</th>
+                            </tr>
+                          </thead>
+                          <tfoot>
+                          </tfoot>
+                          <tbody class = "list-course-data" id ="table-course-data">
+
+                          </tbody>
+
+                        </table>
+                      </div>
+                 </div>
+
+                 <div class="grid__column-10 TableAllCourse">
+                    <div class="container">
+                        <div style = "font-size:large; color: black; text-align: center;">Danh sách khóa học</div>
+                        <table class="responsive-table">
+                          <!-- <caption>Danh sách sản phẩm</caption> -->
+                          <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Tên học phần </th>
+                                <th scope="col">Số tiết</th>
+                                <th scope="col">Thông tin mô tả chi tiết</th>
+                                <th scope="col">Học kì</th>
+                                <th scope="col">SL sinh viên</th>
+                                <th scope="col">ID giảng viên</th>
+                                <th scope="col">Lựa chọn</th>
+                            </tr>
+                          </thead>
+                          <tfoot>
+                          </tfoot>
+                          <tbody class = "list-all-course-data" id ="table-all-courses-data">
+
+                          </tbody>
+
+                        </table>
+                      </div>
+                 </div>
+
+                 <div class="grid__column-10 TranslateTool">
+                    <div class="container">
+                        <div style = "font-size:large; color: black; text-align: center;">Phần mềm hỗ trợ</div>
+
+
+                            <div class="detail-info__body-input-field__firstLanguage">
+                                <label class="detail-info__body-input-field__firstLanguage-label">
+                                    Ngôn ngữ dịch
+                                </label>
+
+                                <input class="detail-info__body-input-field__firstLanguage-value" id = 'user-firstLanguage'>
+                            </input>
+                            </div>
+
+                            <textarea type="text" class="form-control" name="firstLanguage" id = "firstLanguage" required="required"></textarea>  
+
+                            <div class="detail-info__body-input-field__secondLanguage">
+                                <label class="detail-info__body-input-field__secondLanguage-label">
+                                    Ngôn ngữ trả về
+                                </label>
+
+                                <input class="detail-info__body-input-field__secondLanguage-value" id = 'user-secondLanguage'>
+                            </input>
+                            </div>
+
+                            <textarea type="text" class="form-control" name="secondLanguage" id = "secondLanguage" required="required"></textarea>         
+                      </div>
+
+                      <br>
+                      <button class="detail-info__body-input-field-btnSave" id="btnTranslate">Dịch</button>
+                      <!-- <button class="detail-info__body-input-field-btnSave" id="viewProduct">Xem sản phẩm</button>  -->
+                 </div>
+ 
+                    
+
+                  
+                    </div>
+                  </div>                      
+            </div>
+
+
+            <ul class="pagination home-product__pagination ">
+                <li class="pagination-item ">
+                    <a href="#" class="pagination-item__link 
+                    pagination-item__link--previous pagination-item__link-btn--disable" >
+                        <i class="pagination-item__icon fas fa-angle-left"></i>
+                    </a>
+                </li>
+                    <div class="pagination-item-list-number">
+                        <li class="pagination-item pagination-item--active pagination-item-number">
+                            <a href="#" class="pagination-item__link">1</a>
+                        </li>
+                        <li class="pagination-item pagination-item-number">
+                            <a href="#" class="pagination-item__link">2</a>
+                        </li>
+                        <li class="pagination-item pagination-item-number">
+                            <a href="#" class="pagination-item__link">3</a>
+                        </li>
+                        <li class="pagination-item pagination-item-number">
+                            <a href="#" class="pagination-item__link">4</a>
+                        </li>
+                        <li class="pagination-item pagination-item-number">
+                            <a href="#" class="pagination-item__link">5</a>
+                        </li>
+                        <li class="pagination-item pagination-item-number">
+                            <a href="#" class="pagination-item__link">...</a>
+                        </li>
+                        <li class="pagination-item pagination-item-number">
+                            <a href="#" class="pagination-item__link">14</a>
+                        </li>
+                    </div>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-item__link 
+                    pagination-item__link--next ">
+                        <i class="pagination-item__icon fas fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>           
+        </div>           
+
+        <footer class="footer">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__header"> QUẢN LÝ SINH VIÊN</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#" class="footer-item-link">Quản lý tài khoản cá nhân</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item-link">Quản lý số lượng sinh viên</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item-link">Quản lý điểm số</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item-link">Quản lý khóa học</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="footer__text"> © 2021 - bản quyền thuộc về Nhóm 3 - Phước Đăng & Minh Đăng</p>
+                </div>
+            </div>
+            <!-- <div class="footer__bottom">
+                <div class="gridd">
+                    <p class="footer__text"> © 2021 - bản quyền thuộc về Nhóm 3 - Phước Đăng & Minh Đăng</p>
+                </div>
+            </div> -->
+        </footer>
+    </div>
+    <div class="loader-wrapper" >
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+     <div class="modal" >
+        <div class="modal__overlay">
+
+        </div>
+        <div class="modal__body">
+            
+
+        <!-- Register Form  User-->
+
+        <div class="auth-form auth-form-register" id="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h3 class="auth-form__heading">Đăng Ký</h3>
+                    <a href="" class="auth-form__switch-btn auth-form__switch-btn-to-login">Đăng Nhập</a>
+                </div>
+
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <label for="">Email của bạn</label>
+                        <input type="text"  class="auth-form__input" id="register-form_email">
+                        <div class="invalid-Message">
+                            <span class="form-message"></span>
+                        </div> 
+                    </div>
+                    <div class="auth-form__group">
+                        <label for="">Mật khẩu của bạn</label>
+                        <input type="password" class="auth-form__input" id="register-form_pass">
+                        <div class="invalid-Message">
+                            <span class="form-message"></span>
+                        </div> 
+                    </div>
+                    <div class="auth-form__group">
+                        <label for="">Nhập lại mật khẩu</label>
+                        <input type="password" class="auth-form__input" id="register-form_repass">
+                        <div class="invalid-Message">
+                            <span class="form-message"></span>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="auth-form__aside">
+                    <p class="auth-form__policy-text">
+                        Bằng việc đăng ký, bạn đã đồng ý với F8-shop về
+                        <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                        <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                    </p>
+                </div>
+                <div class="auth-form__notification">
+                    <span class="auth-form-notification-label" id ="auth-notification" style="display: block;"></span>
+                </div>
+                <div class="auth-form__controls">
+                    <button class="btn btn--normal auth-form__controls-back" >
+                        TRỞ LẠI
+                    </button>
+                    <button class="btn btn--primary " id="btn-submit-register">
+                        ĐĂNG KÝ
+                    </button>
+                </div>
+            </div>
+            <div class="auth-form__socials">
+                <a href="https://www.facebook.com/rantejun" class="btn btn--size-s btn--with-icon auth-form__socials--facebook">
+                    <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                    <span class="auth-form__socials-label">
+                        Kết nối với Facebook
+                    </span> 
+                </a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn--size-s btn--with-icon auth-form__socials--google">
+                    <i class="auth-form__socials-icon fab fa-google"></i>
+                    <span class="auth-form__socials-label">
+                        Kết nối với Google
+                    </span> 
+                    
+                </a>
+            </div>
+        </div>   
+
+
+        <!-- Login Form User-->
+
+        <div class="auth-form auth-form-login" id="auth-form auth-form-login">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h3 class="auth-form__heading">Đăng Nhập</h3>
+                    <a href="" class="auth-form__switch-btn auth-form__switch-btn-to-register">Đăng Ký</a>
+                </div>
+
+                <div class="auth-form__form ">
+                    <div class="auth-form__group">
+                        <label for="">Email của bạn</label>
+                        <input type="text" id="login-form_email" class="auth-form__input" >
+                        <div class="invalid-Message">
+                            <span class="form-message"></span>
+                        </div> 
+                    </div>
+                    <div class="auth-form__group">
+                        <label for="">Mật khẩu của bạn</label>
+                        <input type="password" id="login-form_password" class="auth-form__input" >
+                        <div class="invalid-Message">
+                            <span class="form-message"></span>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="auth-form__aside">
+                    <div class="auth-form__help">
+        
+                        <a href="" class="auth-form__help-link auth-form__help-link-forgot">
+                            Quên mật khẩu
+                        </a>
+                        <span class="auth-form__help-separate"></span>
+                        <a href="" class="auth-form__help-link auth-form__help-link-help" >
+                            Cần trợ giúp ?
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="login-form__notification">
+                    <span class="login-form-notification-label" style="display: block;"></span>
+                </div>
+    
+                <div class="auth-form__controls">
+                    <button class="btn btn--normal auth-form__controls-back">
+                        TRỞ LẠI
+                    </button>
+                    <button class="btn btn--primary auth-form__controls-login" id="btn-submit-login">
+                        ĐĂNG NHẬP
+                    </button>
+                </div>
+            </div>
+            <div class="auth-form__socials">
+                <a href="https://www.facebook.com/rantejun" class="btn btn--size-s btn--with-icon auth-form__socials--facebook">
+                    <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                    <span class="auth-form__socials-label">
+                        Kết nối với Facebook
+                    </span> 
+                </a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn--size-s btn--with-icon auth-form__socials--google">
+                    <i class="auth-form__socials-icon fab fa-google"></i>
+                    <span class="auth-form__socials-label">
+                        Kết nối với Google
+                    </span> 
+                    
+                </a>
+            </div>
+        </div>  
+            
+        </div>
+    </div> 
+    <script>
+        $(window).on("load",function(){
+        $(".loader-wrapper").fadeOut("slow");
+        
+    });
+    </script>
+    <!-- <script type="module" src="./assets/js/managerPage.js"></script> -->
+</body>
+</html>

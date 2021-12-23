@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <title>Document</title>
+    <!-- <script src="./assets/js/main.js" async></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>   
+</head>
+<body>
+    <div class="test">
+
+    </div>
+    <div class="app">
+        <header class="header">
+            <div class="grid">
+            <!-- Header navbar  -->
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                   
+                            <div class = "header_navbar_title">
+                                <h1>QUẢN LÝ SINH VIÊN</h1>
+                            </div>
+
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-facebook"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item-has-notify">
+
+
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fas fa-bell"></i>Thông Báo
+                            </a>
+
+                        </li>
+
+                        <li class="header__navbar-item">
+
+
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon far fa-question-circle"></i>Trợ Giúp
+                            </a>
+                         
+                        </li>
+                        <!-- Đăng ký a tag
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link header__navbar-item-link-register header__navbar-item-link--strong header__navbar-item--separate">
+                                Đăng Ký
+                            </a>
+                        </li>
+                        <!-- Đăng nhập a tag  -->
+                        <!-- <li class="header__navbar-item ">
+                            <a href="" class="header__navbar-item-link header__navbar-item-link-login header__navbar-item-link--strong ">
+                                Đăng Nhập
+                            </a>
+                        </li> --> 
+                        <li class="header__navbar-item" >
+
+                               <div id = "admin-account">
+
+                               </div> 
+                            
+                        </li>
+
+
+
+                        <li class="header__navbar-item header__navbar-user de-active">
+
+                            <span class="header__navbar-item-user-name">Duy Dương</span>
+
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-item">
+                                    <a href="">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="">Địa chỉ của tôi</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="">Đơn mua</a>
+                                </li>
+                                <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                    <a href="#" class="header__navbar-user-item-link--logout">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li> 
+                    </ul>
+                </nav>
+            <!-- Header with search -->
+                <div class="header-with-search">
+                    <div class="header__logo">
+                        <a href="/" class="header__logo-link">
+                            <svg viewBox="0 0 192 65" class="header__logo-img">
+
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-video3" viewBox="0 0 16 16">
+                                    <path d="M14 9.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-6 5.7c0 .8.8.8.8.8h6.4s.8 0 .8-.8-.8-3.2-4-3.2-4 2.4-4 3.2Z"/>
+                                    <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h5.243c.122-.326.295-.668.526-1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7.81c.353.23.656.496.91.783.059-.187.09-.386.09-.593V4a2 2 0 0 0-2-2H2Z"/>
+                                  </svg>
+
+
+
+                            </svg>
+                        </a>
+                    </div>
+                   
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input"  id ="header__search-input" placeholder="Nhập để tìm kiếm sinh viên">
+
+                            <!-- Search History  -->
+                            <div class="header__search-history">
+                                <h3 class="header__search-history-heading">
+                                    Lịch sử tìm kiếm
+                                </h3>
+                                <ul class="header__search-history-list">
+                                    <li class="header__search-history-item">
+                                        <a href="">Asus tuf</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="">Acer nitro</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="header__search-btn">
+                            <!-- <i class="header__search-btn-icon fas fa-search"></i> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                  </svg>
+                        </button>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </header>    
+        <div class="app__container">
+            <div class="grid">          
+                <div class="grid__row app__content">
+                    <div class = "list-account-title">
+                        <h1>DANH SÁCH TÀI KHOẢN</h1>
+                    </div>
+
+                    <div class="grid__column-2">
+              
+                     
+                          
+                       </div>
+                       <div class="grid__column-10">
+
+
+                           <div class="home-product">
+                               <!-- <div class="grid__row grid__row-product"> -->
+                                   <!-- Product item -->
+                                     
+                                   <div class = "list-content">
+                                    <table id ="mytable">  
+                                        <tr class = "list-content-header">
+                                          <th class ="id">Id</th>
+                                          <th class = "email">Email</th>
+                                          <th class = "password">Password</th>
+                                          <th class = "createdDate">Created Date</th>
+                                          <th class = "updatedDate">Updated Date</th>
+                                          <th class = "options">Options</th>
+                                        </tr>
+                                        <tbody class = "list-account-data" id ="table-data">
+                                       
+                                        </tbody>
+                                    </table>
+                                   </div>
+                                   
+                                                            
+                                <!-- </div> -->
+                                <!-- Pagination
+                                <ul class="pagination home-product__pagination ">
+                                    <li class="pagination-item ">
+                                        <a href="#" class="pagination-item__link 
+                                        pagination-item__link--previous pagination-item__link-btn--disable" >
+                                            <i class="pagination-item__icon fas fa-angle-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="pagination-item">
+                                        <a href="#" class="pagination-item__link 
+                                        pagination-item__link--next ">
+                                            <i class="pagination-item__icon fas fa-angle-right"></i>
+                                        </a>
+                                    </li>
+                                </ul> -->
+
+
+
+                            </div>
+
+
+
+                   </div>
+            </div>
+        </div>
+            
+        <footer class="footer">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__header"> QUẢN LÝ SINH VIÊN</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#" class="footer-item-link">Quản lý tài khoản cá nhân</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item-link">Quản lý số lượng sinh viên</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item-link">Quản lý điểm số</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item-link">Quản lý khóa học</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="gridd">
+                    <p class="footer__text"> © 2021 - bản quyền thuộc về Nhóm 3 - Phước Đăng & Minh Đăng</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+     <div class="modal" >
+        <div class="modal__overlay">
+
+        </div>
+        <div class="modal__body">
+            
+
+        <!-- Register Form  User-->
+
+              <div class="auth-form auth-form-register" id="auth-form auth-form-register">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng Ký</h3>
+                        <a href="" class="auth-form__switch-btn auth-form__switch-btn-to-login">Đăng Nhập</a>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <label for="">Email của bạn</label>
+                            <input type="text"  class="auth-form__input" id="register-form_email">
+                            <div class="invalid-Message">
+                                <span class="form-message"></span>
+                            </div> 
+                        </div>
+                        <div class="auth-form__group">
+                            <label for="">Mật khẩu của bạn</label>
+                            <input type="password" class="auth-form__input" id="register-form_pass">
+                            <div class="invalid-Message">
+                                <span class="form-message"></span>
+                            </div> 
+                        </div>
+                        <div class="auth-form__group">
+                            <label for="">Nhập lại mật khẩu</label>
+                            <input type="password" class="auth-form__input" id="register-form_repass">
+                            <div class="invalid-Message">
+                                <span class="form-message"></span>
+                            </div> 
+                        </div>
+                    </div>
+
+                    <div class="auth-form__notification">
+                        <span class="auth-form-notification-label" id ="auth-notification" style="display: block;"></span>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn btn--normal auth-form__controls-back">
+                            TRỞ LẠI
+                        </button>
+                        <button class="btn btn--primary " id="btn-submit-register">
+                            ĐĂNG KÝ
+                        </button>
+                    </div>
+                </div>
+
+            </div>   
+
+        <!-- Login Form User-->
+
+            <div class="auth-form auth-form-login" id="auth-form auth-form-login">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng Nhập</h3>
+                        <a href="" class="auth-form__switch-btn auth-form__switch-btn-to-register">Đăng Ký</a>
+                    </div>
+
+                    <div class="auth-form__form ">
+                        <div class="auth-form__group">
+                            <label for="">Email của bạn</label>
+                            <input type="text" id="login-form_email" class="auth-form__input" >
+                            <div class="invalid-Message">
+                                <span class="form-message"></span>
+                            </div> 
+                        </div>
+                        <div class="auth-form__group">
+                            <label for="">Mật khẩu của bạn</label>
+                            <input type="password" id="login-form_password" class="auth-form__input" >
+                            <div class="invalid-Message">
+                                <span class="form-message"></span>
+                            </div> 
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <div class="auth-form__help">
+            
+                            <a href="" class="auth-form__help-link auth-form__help-link-forgot">
+                                Quên mật khẩu
+                            </a>
+                            <span class="auth-form__help-separate"></span>
+                            <a href="" class="auth-form__help-link auth-form__help-link-help" >
+                                Cần trợ giúp ?
+                            </a>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="login-form__notification">
+                        <span class="login-form-notification-label" id ="log-notification" style="display: block;"></span>
+                    </div>
+
+
+                    <div class="auth-form__controls">
+                        <button class="btn btn--normal auth-form__controls-back">
+                            TRỞ LẠI
+                        </button>
+                        <button class="btn btn--primary auth-form__controls-login" id="btn-submit-login">
+                            ĐĂNG NHẬP
+                        </button>
+                    </div>
+                </div>
+            </div>  
+            
+        </div>
+    </div> 
+    <script src="./admin.js" >
+          
+    </script>   
+</body>
+</html>
